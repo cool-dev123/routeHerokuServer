@@ -136,8 +136,8 @@ async function callApiGoogle(params) {
     require('dotenv').config();
 
     const endpoint = 'https://maps.googleapis.com/maps/api/directions/json?';
-    params.key = process.env.KEY;
-console.log("params = ",params)
+    params.key = process.env.KEY || 'AIzaSyCxcsfgfRxArC23qvQyo3DL9riiWpQJOug';
+
     return new Promise(function(resolve, reject) {
         request({url:endpoint, qs:params}, function(err, response, body) {
             // resp = response.body;
